@@ -1,0 +1,57 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.stock-profile {
+    background-color: #93d0f4;
+    text-align: center;
+}
+
+.about-the-company {
+    border: 10px;
+}
+
+table{
+    table-layout: fixed;
+    border: 1px;
+    border-color: #ddd;
+    border-collapse: collapse;
+    text-align: left;
+   
+}
+
+th,td{
+    padding: 10px;
+}
+
+a{
+    color:#0079c1;
+}
+
+.footer {
+    background-color: #93d0f4;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: #f2f2f2;
+}
+
+footer {
+    color: #f2f2f2;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Add in your own customisations */
