@@ -1,0 +1,99 @@
+Example Question:
+p.then(value => console.log(value));
+
+Question 1:
+const p = Promise.resolve('resolved');
+
+p.then((value) => {
+    console.log(value); // should log 'resolved'
+
+});
+
+Question 2:
+const p = Promise.reject(new Error('Oops!'));
+
+p.catch((value)=>{
+    console.log(value); // should log 'Oops!'
+});
+
+Question 3:
+const p = Promise.resolve({ id: 1, name: 'Alice' });
+
+p.then((value)=>{
+    console.log(value);
+});
+
+Question 4:
+const p = Promise.resolve({ id: 1, name: 'Alice' });
+
+p.then((value)=>{
+    console.log(value.name);
+});
+
+Question 5:
+const p = Promise.reject(new Error('Invalid id'));
+
+p.catch((message)=>{
+    console.log(message);
+});
+
+Question 6:
+const p = Promise.resolve(42);
+
+p.finally(()=>{
+    console.log('Promise settled');
+});
+
+Question 7:
+const p = Promise.resolve(21);
+
+p.then((value)=>{
+    const doubleValue = value * 2;
+    console.log(doubleValue);
+});
+
+Question 8:
+const p = Promise.reject(new Error('Invalid value'));
+
+p.catch((Error)=>{
+    console.log(Error); // logs 'invalid value'
+    return 0; // return a default value 
+}).then((value) => { 
+    console.log(value); // logs: 0
+});
+
+Question 9:
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  Promise.resolve(3)
+];
+
+Promise.all(promises).then((values) => {
+  console.log(values);
+});
+
+Question 10:
+const promises = [
+  new Promise(resolve => setTimeout(() => resolve('a'), 100)), 
+  new Promise(resolve => setTimeout(() => resolve('b'), 50)),
+  new Promise(resolve => setTimeout(() => resolve('c'), 150))
+];
+
+Promise.race(promises).then((values) => {
+  console.log(values);
+});
+
+Bonus Question:
+const p = Promise.resolve('World');
+
+p.then((value) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Hello ' + value);
+        }, 1000);
+    });
+}).then((finalValue) => {
+    console.log(finalValue); // log 'Hello World' after 1 second
+});
+
